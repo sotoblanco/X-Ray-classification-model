@@ -7,7 +7,7 @@ Pneumonia is an infection that inflames the air sacs in one or both lungs, causi
 
 Key facts provided by the WHO
 
--   Pneumonia accounts for 14% of all deaths of children under 5 years old, killing 740 180 children in 2019.
+-   Pneumonia accounts for 14% of all deaths of children under 5 years old, killing 740,180 children in 2019.
 -   Pneumonia can be caused by viruses, bacteria or fungi.
 -   Pneumonia can be prevented by immunization, adequate nutrition, and by addressing environmental factors.
 -   Pneumonia caused by bacteria can be treated with antibiotics, but only one third of children with pneumonia receive the antibiotics they need.
@@ -15,6 +15,8 @@ Key facts provided by the WHO
 Being able to accurately detect pneumonia in pediatric patients is a live and death procedure, in which being able to act fast can increase the survival chances.
 
 In this project, we evaluate pneumonia in pediatric patients by using deep-learning techniques with **TensorFlow** that allows to create a classification model.
+
+> Warning: One common mistake is to try to predict an adult x-ray image, which lead to wrong results. We would demonstrate at the demonstration section. 
 
 ## Data
 
@@ -27,6 +29,10 @@ The following is the same description provided in the kaggle dataset about detai
 > Chest X-ray images (anterior-posterior) were selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center, Guangzhou. All chest X-ray imaging was performed as part of patients’ routine clinical care.
 
 > For the analysis of chest x-ray images, all chest radiographs were initially screened for quality control by removing all low quality or unreadable scans. The diagnoses for the images were then graded by two expert physicians before being cleared for training the AI system. In order to account for any grading errors, the evaluation set was also checked by a third expert.
+
+## Model
+
+The prediction model provides a probability to predict that a pediatric patient x-ray shows signs of bacterial or virus pneumonia. The threshold was set at 0.8 to have more confidence in positive cases, however this might not be the ideal solution, but it would help to demonstrate some aspects of the prediction. 
 
 ## Structure of the repository
 
@@ -62,8 +68,9 @@ pipenv shell
 
 Run the ``train.py`` file to obtain the best model for the training parameters as a ``.h5`` file and convert to tflite file.
 
-#####add the kaggle notebook
-> To make easier for you to run the training file you can go to this kaggle notebook that replicates the ``train.py`` file.
+> To make easier for you to run the training file you can go to this kaggle notebook that replicates the ``train.py`` file, so you don't need to download the data 
+
+ [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/pastorsoto/pneumonia-classification-tensorflow)
 
 Run the docker file:
 
@@ -166,6 +173,23 @@ Go to actions and click on deploy
  Now we just need to obtain the URL and add predict at the end:
  ![image](https://user-images.githubusercontent.com/46135649/207660282-f9c17a53-aa2b-4c04-8c17-74efcb1b88ba.png)
 
-## Demostration
+## Demonstration
 
+Let's use some examples to demonstrate how the AWS lambda function service work:
+
+This notebook also helps to demonstrate how to run the prediction service
+
+The demonstration was made from independent articles that wasn't part of the training or testing example, but with similar characteristics of the patients using in the training. 
+
+### First demonstration
+
+[Link to the image](https://img.medscapestatic.com/pi/meds/ckb/29/12429tn.jpg)
+
+![image](https://user-images.githubusercontent.com/46135649/208269571-f2f180ff-9cf9-4092-b627-d3521fb4dfa0.png)
+
+### Second demonstration
+
+[Link to the image](https://img.medscapestatic.com/pi/meds/ckb/30/12430tn.jpg)
+
+![image](https://user-images.githubusercontent.com/46135649/208269584-f7ceab08-016a-451b-b36c-cb2128fa5ce6.png)
 
