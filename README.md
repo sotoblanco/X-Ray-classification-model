@@ -177,7 +177,7 @@ Go to actions and click on deploy
 
 Let's use some examples to demonstrate how the AWS lambda function service work:
 
-This notebook also helps to demonstrate how to run the prediction service
+The ``Demonstration_notebook.ipyb`` shows how to run the predictions service.
 
 The demonstration was made from independent articles that wasn't part of the training or testing example, but with similar characteristics of the patients using in the training. 
 
@@ -192,4 +192,3 @@ The demonstration was made from independent articles that wasn't part of the tra
 [Link to the image](https://img.medscapestatic.com/pi/meds/ckb/30/12430tn.jpg)
 
 ![image](https://user-images.githubusercontent.com/46135649/208269584-f7ceab08-016a-451b-b36c-cb2128fa5ce6.png)
-
