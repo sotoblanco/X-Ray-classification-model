@@ -36,6 +36,10 @@ The prediction model provides a probability to predict that a pediatric patient 
 
 ## Structure of the repository
 
+``images``: Example images for the classification model (you can use the URL to run the prediction service)
+
+``Demonstration_notebook.ipynb``: Notebook that runs the image classification model using the prediction service
+
 ``Dockerfile``: For deployment of the model in AWS as lambda function.
 
 ``Notebook.ipynb``: Notebook for exploratory data analysis, creating and exporting the model. 
